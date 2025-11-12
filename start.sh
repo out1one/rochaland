@@ -3,7 +3,7 @@
 # Configuración
 MC_VERSION="1.21.10"
 MC_RAM="2G"
-MC_URL="https://launcher.mojang.com/v1/objects/0e4d35f15e50830251c49c0bbaf4a7db70f1c2e8/server.jar"
+MC_URL="https://piston-data.mojang.com/v1/objects/95495a7f485eedd84ce928cef5e223b757d2f764/server.jar"
 
 # Elimina cualquier server.jar viejo
 rm -f server.jar
@@ -18,3 +18,4 @@ echo "eula=true" > eula.txt
 # Iniciar el servidor
 echo "Iniciando Minecraft Server versión $MC_VERSION con $MC_RAM de RAM..."
 java -Xmx$MC_RAM -Xms$MC_RAM -jar server.jar nogui
+
