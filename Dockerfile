@@ -17,3 +17,4 @@ EXPOSE 25565
 
 # Comando para iniciar el servidor
 CMD ["./start.sh"]
+
