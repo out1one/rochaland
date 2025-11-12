@@ -1,5 +1,5 @@
 # Usa Java 17
-FROM openjdk:17-jdk-slim
+FROM openjdk:17
 
 # Carpeta de trabajo
 WORKDIR /minecraft
@@ -15,3 +15,4 @@ EXPOSE 25565
 
 # Comando para iniciar el servidor
 CMD ["./start.sh"]
+
