@@ -19,3 +19,4 @@ echo "eula=true" > eula.txt
 echo "Iniciando Minecraft Server versión $MC_VERSION con $MC_RAM de RAM..."
 java -Xmx$MC_RAM -Xms$MC_RAM -jar server.jar nogui
 
+
