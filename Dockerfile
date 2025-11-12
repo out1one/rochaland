@@ -1,10 +1,10 @@
-# Usa Java 17
+# Usa OpenJDK 17 oficial
 FROM openjdk:17
 
 # Carpeta de trabajo
 WORKDIR /minecraft
 
-# Copia todos los archivos del repo
+# Copia los archivos del repo
 COPY . /minecraft
 
 # Da permisos de ejecución al start.sh
