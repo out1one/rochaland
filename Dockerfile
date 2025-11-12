@@ -1,19 +1,25 @@
+# Usar OpenJDK 17
 FROM openjdk:17-jdk-slim
 
+# Carpeta de trabajo
 WORKDIR /minecraft
 
 # Copiar solo server.jar y eula.txt
 COPY server.jar .
 COPY eula.txt .
 
-# Instalar wget y unzip
-RUN apt-get update && apt-get install -y wget unzip
+# Instalar utilidades necesarias
+RUN apt-get update && apt-get install -y wget unzip ca-certificates && rm -rf /var/lib/apt/lists/*
 
-# Descargar y descomprimir el mundo
-RUN wget -O world.zip "https://drive.google.com/file/d/1jdHEIuuiC_-GuJTggdFsiL4bjPQf36oS/view" && unzip world.zip && rm world.zip
+# Descargar y descomprimir el mundo de Google Drive
+# Sustituye el ID del archivo por tu mundo
+RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1jdHEIuuiC_-GuJTggdFsiL4bjPQf36oS' -O world.zip \
+    && unzip world.zip \
+    && rm world.zip
 
-# Exponer puerto de Minecraft
+# Exponer el puerto de Minecraft
 EXPOSE 25565
 
-# Iniciar servidor
+# Iniciar el servidor con memoria ajustable
 CMD ["java", "-Xmx4G", "-Xms4G", "-jar", "server.jar", "nogui"]
+
