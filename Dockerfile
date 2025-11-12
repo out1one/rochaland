@@ -1,5 +1,5 @@
-# Usar OpenJDK 17
-FROM openjdk:17-jdk
+# Usar OpenJDK 17 oficial (debilitada)
+FROM eclipse-temurin:17-jdk
 
 # Carpeta de trabajo
 WORKDIR /minecraft
@@ -23,3 +23,4 @@ EXPOSE 25565
 
 # Iniciar servidor (ajusta memoria si necesitas)
 CMD ["java", "-Xmx4G", "-Xms4G", "-jar", "server.jar", "nogui"]
+
