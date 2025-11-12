@@ -1,5 +1,5 @@
-# Usa OpenJDK 17 oficial
-FROM openjdk:17
+# Usa Eclipse Temurin OpenJDK 17
+FROM eclipse-temurin:17-jdk
 
 # Carpeta de trabajo
 WORKDIR /minecraft
@@ -15,4 +15,3 @@ EXPOSE 25565
 
 # Comando para iniciar el servidor
 CMD ["./start.sh"]
-
