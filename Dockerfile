@@ -1,10 +1,10 @@
-# Usar OpenJDK 17
-FROM openjdk:17-jdk-slim
+# Usar OpenJDK 17
+FROM openjdk:17-jdk
 
 # Carpeta de trabajo
 WORKDIR /minecraft
 
-# Copiar solamente eula.txt
+# Copiar solo eula.txt
 COPY eula.txt .
 
 # Instalar utilidades necesarias
@@ -23,4 +23,3 @@ EXPOSE 25565
 
 # Iniciar servidor (ajusta memoria si necesitas)
 CMD ["java", "-Xmx4G", "-Xms4G", "-jar", "server.jar", "nogui"]
-
